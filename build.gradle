@@ -9,6 +9,19 @@ repositories {
     mavenCentral()
 }
 
+test {
+    useJUnitPlatform()
+}
+
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:1.4.30"
+    testImplementation 'io.kotlintest:kotlintest-runner-junit5:3.4.2'
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "15"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "15"
 }
