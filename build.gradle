@@ -11,6 +11,8 @@ repositories {
 
 test {
     useJUnitPlatform()
+    scanForTestClasses = false
+    include "**/*Test"
 }
 
 dependencies {
