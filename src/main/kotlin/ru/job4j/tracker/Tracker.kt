@@ -4,8 +4,8 @@ import kotlin.random.Random
 
 /**
  * @author Sir-Hedgehog (mailto:quaresma_08@mail.ru)
- * @version 1.0
- * @since 28.02.2021
+ * @version 2.0
+ * @since 01.03.2021
  */
 class Tracker {
     private val items: MutableList<Item> = ArrayList()
@@ -19,7 +19,7 @@ class Tracker {
      * @return уникальный ключ.
      */
     private fun generateId(): String {
-        return RANDOM.nextInt().toString();
+        return RANDOM.nextInt().toString()
     }
 
     /**
@@ -28,9 +28,9 @@ class Tracker {
      * @return заявка
      */
     fun add(item: Item): Item {
-        item.setId(generateId())
+        item.id = generateId()
         items.add(item)
-        return item;
+        return item
     }
 
     /**
@@ -40,10 +40,10 @@ class Tracker {
      */
     fun update(id: String, item: Item): Boolean {
         var result = false;
-        item.setId(id);
+        item.id = id
         for (index in 0 until items.size) {
-            if (items[index].getId() == id) {
-                items.set(index, item)
+            if (items[index].id == id) {
+                items[index] = item
                 result = true
                 break
             }
@@ -58,7 +58,7 @@ class Tracker {
     fun delete(id: String): Boolean {
         var result = false;
         for (index in 0 until items.size) {
-            if (items[index].getId() == id) {
+            if (items[index].id == id) {
                 items.removeAt(index)
                 result = true
                 break
@@ -83,7 +83,7 @@ class Tracker {
     fun findByName(name: String): List<Item> {
         val result: MutableList<Item> = ArrayList()
         for (index in 0 until items.size) {
-            if (items[index].getName().equals(name)) {
+            if (items[index].name == name) {
                 result.add(items[index])
             }
         }
@@ -98,7 +98,7 @@ class Tracker {
     fun findById(id: String): Item? {
         var result: Item? = null
         for (index in 0 until items.size) {
-            if (items[index].getId().equals(id)) {
+            if (items[index].id == id) {
                 result = items[index]
                 break
             }
