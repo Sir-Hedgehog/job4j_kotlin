@@ -4,11 +4,11 @@ import kotlin.random.Random
 
 /**
  * @author Sir-Hedgehog (mailto:quaresma_08@mail.ru)
- * @version 2.0
- * @since 01.03.2021
+ * @version 2.1
+ * @since 02.03.2021
  */
 class Tracker {
-    private val items: MutableList<Item> = ArrayList()
+    private val items = mutableListOf<Item>()
 
     companion object {
         val RANDOM = Random
@@ -81,7 +81,7 @@ class Tracker {
      * @return существующая заявка по введенному имени
      */
     fun findByName(name: String): List<Item> {
-        val result: MutableList<Item> = ArrayList()
+        val result = mutableListOf<Item>()
         for (index in 0 until items.size) {
             if (items[index].name == name) {
                 result.add(items[index])
@@ -91,7 +91,7 @@ class Tracker {
     }
 
     /**
-     * Метод выдает список по имени
+     * Метод выдает заявку по введенному идентификатору
      * @param id вводится идентификатор
      * @return существующая заявка по введенному идентификатору
      */
