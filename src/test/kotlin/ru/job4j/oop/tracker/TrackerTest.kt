@@ -1,11 +1,11 @@
-package ru.job4j.tracker
+package ru.job4j.oop.tracker
 
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.StringSpec
 
 /**
  * @author Sir-Hedgehog (mailto:quaresma_08@mail.ru)
- * @version 2.0
+ * @version 2.1
  * @since 01.03.2021
  */
 class TrackerTest : StringSpec({

@@ -1,10 +1,10 @@
-package ru.job4j.tracker
+package ru.job4j.oop.tracker
 
 import kotlin.random.Random
 
 /**
  * @author Sir-Hedgehog (mailto:quaresma_08@mail.ru)
- * @version 2.1
+ * @version 2.2
  * @since 02.03.2021
  */
 class Tracker {

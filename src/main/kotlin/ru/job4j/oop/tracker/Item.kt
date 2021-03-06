@@ -1,8 +1,8 @@
-package ru.job4j.tracker
+package ru.job4j.oop.tracker
 
 /**
  * @author Sir-Hedgehog (mailto:quaresma_08@mail.ru)
- * @version 2.0
+ * @version 2.1
  * @since 01.03.2021
  */
 data class Item(var id: String = "", var name: String = "", var desc: String = "") {
