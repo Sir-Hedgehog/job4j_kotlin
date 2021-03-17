@@ -1,11 +1,12 @@
 package ru.job4j.oop.tracker
 
+import kotlin.math.abs
 import kotlin.random.Random
 
 /**
  * @author Sir-Hedgehog (mailto:quaresma_08@mail.ru)
- * @version 2.2
- * @since 02.03.2021
+ * @version 2.3
+ * @since 17.03.2021
  */
 class Tracker {
     private val items = mutableListOf<Item>()
@@ -19,7 +20,7 @@ class Tracker {
      * @return уникальный ключ.
      */
     private fun generateId(): String {
-        return RANDOM.nextInt().toString()
+        return abs(RANDOM.nextInt()).toString()
     }
 
     /**
