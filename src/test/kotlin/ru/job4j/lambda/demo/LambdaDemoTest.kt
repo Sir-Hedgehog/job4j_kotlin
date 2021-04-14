@@ -1,4 +1,4 @@
-package ru.job4j.lambda
+package ru.job4j.lambda.demo
 
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.StringSpec

@@ -1,4 +1,4 @@
-package ru.job4j.lambda
+package ru.job4j.lambda.demo
 
 /**
  * @author Sir-Hedgehog (mailto:quaresma_08@mail.ru)
