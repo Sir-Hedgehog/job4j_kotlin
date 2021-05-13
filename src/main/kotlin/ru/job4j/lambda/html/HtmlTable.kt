@@ -9,6 +9,8 @@ class HtmlTable {
 
     /**
      * Метод создает пустую таблицу с заданным количеством строк и ячеек
+     * @param row - строка
+     * @param cell - ячейка
      * @return - пустая таблица
      */
     fun create(row: Int, cell: Int): String {
