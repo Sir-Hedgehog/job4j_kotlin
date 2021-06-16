@@ -1,4 +1,4 @@
-package ru.job4j.types
+package ru.job4j.types.basic
 
 /**
  * @author Sir-Hedgehog (mailto:quaresma_08@mail.ru)

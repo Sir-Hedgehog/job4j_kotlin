@@ -1,7 +1,10 @@
-package ru.job4j.types
+package ru.job4j.types.basic
 
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.StringSpec
+import ru.job4j.types.basic.Account
+import ru.job4j.types.basic.BankService
+import ru.job4j.types.basic.User
 
 /**
  * @author Sir-Hedgehog (mailto:quaresma_08@mail.ru)
