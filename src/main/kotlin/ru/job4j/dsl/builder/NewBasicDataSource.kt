@@ -1,9 +1,9 @@
-package ru.job4j.dsl
+package ru.job4j.dsl.builder
 
 /**
  * @author Sir-Hedgehog (mailto:quaresma_08@mail.ru)
- * @version 1.0
- * @since 05.08.2021
+ * @version 1.1
+ * @since 08.08.2021
  */
 class NewBasicDataSource private constructor(
     private val driverClassName: String,
