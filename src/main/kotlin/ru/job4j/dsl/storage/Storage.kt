@@ -6,8 +6,8 @@ import java.util.ArrayList
 
 /**
  * @author Sir-Hedgehog (mailto:quaresma_08@mail.ru)
- * @version 1.0
- * @since 29.08.2021
+ * @version 2.0
+ * @since 01.03.2021
  */
 class Storage {
     private lateinit var connection: Connection
@@ -49,7 +49,7 @@ class Storage {
      * @param item - заявка
      * @return - успешность операции
      */
-    fun create(item: Item): Boolean =
+    infix fun create(item: Item): Boolean =
         command("INSERT INTO items(id, name, description) VALUES (?, ?, ?)") { ps ->
                 ps.setInt(1, item.id.toInt())
                 ps.setString(2, item.name)
@@ -63,7 +63,7 @@ class Storage {
      * @param item - заявка
      * @return - успешность операции
      */
-    fun update(item: Item): Boolean =
+    infix fun update(item: Item): Boolean =
         command("UPDATE items SET name = ?, description = ? WHERE id = ?") { ps ->
                 ps.setString(1, item.name)
                 ps.setString(2, item.desc)
@@ -77,7 +77,7 @@ class Storage {
      * @param id - идентификатор
      * @return - успешность операции
      */
-    fun delete(id: String): Boolean =
+    infix fun delete(id: String): Boolean =
         command("DELETE FROM items WHERE id = ?") { ps ->
                 ps.setInt(1, id.toInt())
                 ps.executeUpdate()
@@ -89,7 +89,7 @@ class Storage {
      * @param id - идентификатор
      * @return - существующая заявка по введенному идентификатору
      */
-    fun findById(id: String): Item? =
+    infix fun findById(id: String): Item? =
         command("SELECT * FROM items WHERE id = ?") {
                 ps ->
                     ps.setInt(1, id.toInt())

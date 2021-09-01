@@ -7,8 +7,8 @@ import ru.job4j.oop.tracker.Item
 
 /**
  * @author Sir-Hedgehog (mailto:quaresma_08@mail.ru)
- * @version 1.0
- * @since 31.08.2021
+ * @version 2.0
+ * @since 01.09.2021
  */
 class StorageTest: StringSpec({
     "Check to create(), findById(), deleteAll()"{
@@ -20,16 +20,16 @@ class StorageTest: StringSpec({
 
         val item = Item(id = itemId, name = itemName, desc = itemDesc)
 
-        val createdSuccess = store.create(item)
+        val createdSuccess = store create item
         createdSuccess shouldBe true
 
-        val savedItem = store.findById(itemId)
+        val savedItem = store findById itemId
         savedItem shouldBe item
 
         val deletedSuccess = store.deleteAll()
         deletedSuccess shouldBe true
 
-        val deletedItem = store.findById(itemId)
+        val deletedItem = store findById itemId
         deletedItem shouldBe null
     }
 
@@ -40,9 +40,9 @@ class StorageTest: StringSpec({
         val firstItem = Item(id = random.getRandomInt(3), name = random.getRandomString(6), desc = random.getRandomString(50))
         val secondItem = Item(id = random.getRandomInt(3), name = random.getRandomString(6), desc = random.getRandomString(50))
 
-        val firstCreatedSuccess = store.create(firstItem)
+        val firstCreatedSuccess = store create firstItem
         firstCreatedSuccess shouldBe true
-        val secondCreatedSuccess = store.create(secondItem)
+        val secondCreatedSuccess = store create secondItem
         secondCreatedSuccess shouldBe true
 
         val items = store.findAll()
@@ -60,16 +60,16 @@ class StorageTest: StringSpec({
         val newItem = Item(id = itemId, name = random.getRandomString(6), desc = random.getRandomString(50))
         val renewItem = Item(id = itemId, name = random.getRandomString(8), desc = random.getRandomString(70))
 
-        val createdSuccess = store.create(newItem)
+        val createdSuccess = store create newItem
         createdSuccess shouldBe true
 
-        val createdItem = store.findById(itemId)
+        val createdItem = store findById itemId
         createdItem shouldBe newItem
 
-        val updatedSuccess = store.update(renewItem)
+        val updatedSuccess = store update renewItem
         updatedSuccess shouldBe true
 
-        val updatedItem = store.findById(itemId)
+        val updatedItem = store findById itemId
         updatedItem shouldBe renewItem
 
         store.deleteAll()
@@ -84,16 +84,16 @@ class StorageTest: StringSpec({
 
         val newItem = Item(id = itemId, name = itemName, desc = itemDesc)
 
-        val createdSuccess = store.create(newItem)
+        val createdSuccess = store create newItem
         createdSuccess shouldBe true
 
-        val createdItem = store.findById(itemId)
+        val createdItem = store findById itemId
         createdItem shouldBe newItem
 
-        val updatedSuccess = store.delete(itemId)
+        val updatedSuccess = store delete itemId
         updatedSuccess shouldBe true
 
-        val updatedItem = store.findById(itemId)
+        val updatedItem = store findById itemId
         updatedItem shouldBe null
 
         store.deleteAll()
