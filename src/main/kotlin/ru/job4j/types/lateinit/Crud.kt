@@ -43,7 +43,7 @@ class Crud {
      * Метод проверяет запрос на корректность
      */
     private fun validate(sql : String): Boolean {
-        val templateSql = sql.toLowerCase()
+        val templateSql = sql.lowercase()
         var result = false
 
         if (templateSql.contains("select") ||
